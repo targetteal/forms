@@ -1,0 +1,189 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+<div ng-app="myApp" ng-controller="assessmentController">
+	<p>Seja bem-vindo à Avaliação de Desenvolvimento Organizacional! </p>
+	<p>Essa é uma avaliação para determinar o <a href="http://targetteal.com/os-5-estagios-de-desenvolvimento-organizacional/" target="_blank">estágio de desenvolvimento da sua organização, de acordo com o modelo proposto por Frederic Laloux</a>.</p>
+	<p>Escolha a alternativa que mais se aplica a sua organização, de acordo com cada critério sendo avaliado.</p>
+	<hr/>
+	<div class="radio-row" ng-repeat="(name, obj) in radioData">
+		<p>
+			<strong>{{obj.name}}</strong>
+		</p>
+		<div ng-repeat="(index, option) in obj.options">
+			<label><input name="{{name}}" ng-model="options[name]" type="radio" value="{{index + 1}}">&nbsp; {{option}}</label>
+		</div>
+		<hr/>
+	</div>
+	<br/>
+	<br/>
+	<button style="color: white" class="fusion-button button-flat button-square button-xlarge button-default button-1" target="_self" ng-click="done()"><span class="fusion-button-text">Já terminou? Confira os resultados</span></button>
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('assessmentController', function($scope, $http) {
+		$scope.options = {
+			"estrutura" : 0,
+			"coordenacao" : 0,
+			"times" : 0,
+			"recrutamento" : 0,
+			"onboarding" : 0,
+			"feedback" : 0,
+			"compensacao" : 0,
+			"demissoes" : 0,
+			"orcamento" : 0,
+			"mudancas" : 0,
+			"reunioes" : 0,
+			"decisao" : 0
+		};
+		$scope.done = function () {
+			var url, key, value, red, amber, orange, green, teal;
+			red = amber = orange = green = teal = 0;
+			for (key in $scope.options) {
+				value = parseInt($scope.options[key]);
+				if (value == 1) red++;
+				else if (value == 2) amber++;
+				else if (value == 3) orange++;
+				else if (value == 4) green++;
+				else if (value == 5) teal++;
+			}
+			url = '/avaliacao-de-desenvolvimento-organizacional-resultados/?';
+			url += 'r1=' + red + '&';
+			url += 'r2=' + amber + '&';
+			url += 'r3=' + orange + '&';
+			url += 'r4=' + green + '&';
+			url += 'r5=' + teal;
+			window.location.href = url;
+			return false;
+		};
+		var progressData = {
+			'impulsiva': { text:'Impulsiva - Vermelha', lightColor: '#f4cccc', darkColor: '#e06666' },
+			'conformista': { text: 'Conformista - Âmbar', lightColor: '#fff2cc', darkColor: '#ffd966' },
+			'conquista': { text: 'Conquista - Laranja', lightColor: '#fce5cd', darkColor: '#f6b26b' },
+			'pluralistica': { text: 'Pluralística - Verde', lightColor: '#d9ead3', darkColor: '#93c47d' },
+			'evolutiva': { text: 'Evolutiva - Verde-Azulada', lightColor: '#d0e0e3', darkColor: '#76a5af' }
+		};
+		var radioData = {
+			"estrutura" : {
+				"name": "1- Estrutura Organizacional",
+				"options": [
+					"A estrutura gira em torno do líder, que possui poderes absolutos sobre os demais. Os principais subordinados estão constantemente tentando tomar o poder.", 
+					"Estrutura piramidal hierárquica totalmente estática e com linhas de comando claras. As pessoas apenas seguem as ordens dos seus superiores e nada além disso.", 
+					"A estrutura é piramidal e hierárquica, mas existem times multidisciplinares, iniciativas por projeto e consultores externos que cavam alguns \"buracos\" na pirâmide. ", 
+					"Ainda existe uma pirâmide, porém muito achatada. Os líderes são vistos como \"servidores\" e são encorajados a delegar o máximo possível para os que estão \"na linha de frente\". Muitas vezes a pirâmide é invertida.", 
+					"A estrutura é descentralizada, formada por redes ou círculos auto-organizados. Em alguns casos existe uma hierarquia natural de trabalho, mas ela está em constante mudança e não é formada por pessoas."]
+			},
+			"coordenacao": {
+				"name": "2 - Coordenação",
+				"options": [
+					"O líder garante que a coordenação ocorra, normalmente através da força e do poder.",
+					"A coordenação acontece através de processos formalizados que todos concordam em seguir sem questionamentos.",
+					"Reuniões para alinhar perspectivas e compartilhar status correspondem ao principal mecanismo de coordenação. ",
+					"É gasto muito tempo na coordenação, onde os sentimentos das pessoas e os seus pontos de vista diferentes são colocados na mesa e ouvidos. Normalmente isso acontece através de reuniões, que tendem a ser muito longas, pois busca-se o consenso.",
+					"A coordenação não acontece mais através de uma linha de comando (hierarquia) ou por alinhamentos com todo o time, mas por encontros sob demanda e compromissos peer-to-peer."
+				]
+			},
+			"times": {
+				"name": "3 - Times de Projeto e Força-Tarefa",
+				"options": [
+					"O líder frequentemente convoca Forças-Tarefa para uma missão específica, definindo quais são as expectativas, mas sem dar instruções de como fazer.",
+					"Os gestores convocam um time de projeto ou força-tarefa quando os processos e estrutura convencional não dá conta de uma nova necessidade. Instruções claras de execução são passadas e as pessoas são escolhidas com base no seu conhecimento e lealdade.",
+					"São convocados quando o time de gestão quer atingir um determinado resultado ou explorar uma nova oportunidade de negócio. As pessoas são escolhidas com base na sua capacidade de inovar, competências e reputação. O gerente de projetos é responsável por atingir o resultado dentro das metas de escopo, custo e prazo estabelecidas.",
+					"Os times de projeto ou força-tarefa são estabelecidos quando um grupo de colegas percebe que é apropriado. Não existe um líder ou gerente de projetos, mas um facilitador pode ser escolhido. Os membros são escolhidos com base no seu conhecimento e capacidade de trazer outras perspectivas.",
+					"Times de projeto ou força-tarefa emergem e desaparecem, dependendo do propósito evolucionário da organização. São compostos por pessoas que se importam com o projeto e se dedicarão a ele, independemente de conhecimento ou experiência prévia."
+				]
+			},
+			"recrutamento": {
+				"name": "4 - Recrutamento",
+				"options": [
+					"O líder cerca-se de familiares ou outras pessoas que ele pode amedrontar e confiar através da promessa de cuidar e protegê-las. Existem rituais onde os recrutados juram lealdade ao líder.",
+					"Para aplicar a uma vaga, candidatos devem ter um background específico, um diploma ou X anos de experiência. São recrutados aqueles que atendem a todos os critérios.",
+					"O recrutamento é focado em selecionar as pessoas com as melhores habilidades, experiências relevantes, maior potencial de desenvolvimento e melhor adequação à posição.",
+					"A compatibilidade do candidato com a cultura da organização é muito relevante. Candidatos a posições de liderança são rigorosamente avaliados em termos de sua capacidade de delegar, empoderar e atuar como líder-servidor.",
+					"O recrutamento é frequentemente feito pelos times ou grupos que necessitam de um novo membro. Compatibilidade com a cultura e o propósito da organização são mais relevantes que outros aspectos, pois os papéis e responsanbilidades costumam variar bastante."
+				]
+			},
+			"onboarding": {
+				"name": "5 - Onboarding",
+				"options": [
+					"O processo de onboarding inclui um ritual onde os entrantes juram lealdade ao líder.",
+					"Os entrantes recebem uma lista de regras da organização, juntamente com as devidas punições em caso de descumprimento.",
+					"Procedimentos de segurança e saúde são o foco do onboarding. O subordinado também é instruído a marcar uma reunião com o seu chefe para maiores orientações. Em alguns casos o entrante recebe um folheto com a história, missão e valores da compania.",
+					"O centro do onboarding é a cultura organizacional. O processo é normalmente divertido, sendo que a organização faz um grande esforço para receber o novo \"membro da família\" da melhor forma possível.",
+					"O onboarding é focado em habilidades interpessoais e imersão em diferentes partes da organização. O objetivo é ajudar os entrantes a encontarem o seu lugar na organização, através de princípios e práticas de autogestão, propósito e integralidade."
+				]
+			},
+			"feedback": {
+				"name": "6 - Feedback e Performance",
+				"options": [
+					"O líder demanda que ordens sejam seguidas sem questionamento. Os feedbacks existem através de mecanismos de punição e recompensa por complacência com o líder.",
+					"Os trabalhadores são vistos como preguiçosos e por isso são supervisionados o tempo inteiro. Falhas são tratadas com punições. Repetição de erros resulta em expulsão.",
+					"A performance é medida através do atingimento de objetivos criados pelos líderes. Bons resultados são recompensados com incentivos e bônus. O feedback é top-down e focado nos resultado do trabalho.",
+					"Os feedbacks são centrados em resultados e comportamentos. Normalmente são compostos por avaliações 360º, onde líderes, colegas e a própria pessoa contribuem.",
+					"Os feedbacks são responsabilidade de todos e acontecem de forma rotineira e natural na organização. Normalmente não existem avaliações formais ligadas a incentivos, pois todos são intrinsicamente motivados a realizar o trabalho.",
+				]
+			},
+			"compensacao": {
+				"name": "7 - Compensação e Incentivos",
+				"options": [
+					"Não existem processos de compensação e incentivos. O líder decide o quanto pagar, quando reduzir e quando aumentar.",
+					"O salário é determinado pela posição na hierarquia ou alguma outra condição de status, como o grau de formação. Não existem sistemas de incentivo.",
+					"Existe negociação individual de salário. Os líderes tem certa liberdade para aumentar o salário de algum subordinado dentro de uma faixa pré-determinada. Sistemas de incentivo baseados em metas individuais fornecem bônus aos colaboradores.",
+					"Os sistemas de incentivo são por times ao invés de individuais. A organização preocupa-se em não ter uma grande diferença salarial entre o CEO e o colaborador com o menor salário.",
+					"As pessoas decidem os próprios salários ou existem sistemas distribuídos que determinam o salário a partir de diversas perspectivas. Não existem incentivos ou bônus.",
+				]
+			},
+			"demissoes": {
+				"name": "8 - Demissões",
+				"options": [
+					"Não existem processos formais para decidir se um membro da organização deve sair. Essa é uma decisão do líder máximo, que decide quem fica e quem sai. A saída voluntária é vista como uma traição.",
+					"Causas mais comuns incluem a violação de regras ou falta de disciplina. Os indivíduos dessas organizações normalmente permanecem nelas pelo resto de suas vidas para \"fazer carreira\".",
+					"Os líderes podem despedir os seus funcionários com o auxílio do RH. Existem sistemas de avaliação de performance que fornecem dados (números) para suportar essas decisões.",
+					"Existe uma alta tolerância à demissão, sendo que muitas vezes procura-se dar mais uma chance às pessoas. Quando um indivíduo não se adequa à cultura organizacional e seus valores, ele pode ficar isolado e sair voluntariamente. Em alguns casos os times podem despedir um de seus membros se for um consenso.",
+					"Demissões são extremamente raras e encaradas como um último recurso, apenas depois que processos de resolução de conflitos e mediação não foram suficientes. Quando alguém sai, a organização oferece suporte e facilita a transição. ",
+				]
+			},
+			"orcamento": {
+				"name": "9 - Orçamento e Controle",
+				"options": [
+					"Não existem processos de orçamento e controle, pois a organização opera no curto prazo, apenas respondendo a oportunidades e ameaças.",
+					"Existem processos formais e planos de longo prazo que estabelecem quanto pode ser gasto. Essas decisões são tomadas no topo e os funcionários apenas seguem os processos especificados.",
+					"Existe um planejamento (normalmente anual), onde a estratégia da organização é quebrada em objetivos que são cascateados de cima para baixo na hierarquia. Cada unidade recebe uma quantia (orçamento) que pode gerenciar para fazer investimentos. Esses valores estão condicionados ao atingimento de resultados.",
+					"Nos processos de planejamento, orçamento e controle, componentes qualitativos e indicadores não-financeiros também são utilizados para indicar quão bem a organização está indo (engajamento dos colaboradores, satisfação do cliente, etc).",
+					"Ao invés de tentar prever e controlar o futuro através de planos detalhados, prefere-se sentir o presente e responder a mudanças. A conformidade com o plano (previsto vs orçado) normalmente não é medida.",
+				]
+			},
+			"mudancas": {
+				"name": "10 - Gestão de mudanças",
+				"options": [
+					"Não existem processos de gestão de mudanças. O ambiente é caótico e a organização apenas responde a ameaças e oportunidades.",
+					"Os processos formais e regras são imutáveis. As mudanças, quando ocorrem, vem de cima para baixo. Não existe planejamento de mudanças para tentar reduzir a resistência.",
+					"As mudanças organizacionais são frequentes e normalmente lideradas por um time de gestores. A estrutura hierárquica rígida gera resistência, embora as mudanças sejam planejadas cautelosamente.",
+					"As pessoas são envolvidas e consultadas nos processos de mudança. Normalmente busca-se o consenso do time para realizar uma alteração significativa.",
+					"A mudança é constante e a estrutura organizacional permite com que ela aconteça natural e continuamente.",
+				]
+			},
+			"reunioes": {
+				"name": "11 - Reuniões",
+				"options": [
+					"O líder máximo e os seus colegas mais próximos convocam toda a organização para fazerem pronunciamentos e cerimônias. Em alguns casos, o líder convoca uma pessoa para consultá-la",
+					"Reuniões são ferramentas utilizadas para passar informações através da hierarquia, de cima para baixo. ",
+					"Reuniões são utilizadas para planejamento de novos projetos, brainstorming, acompanhamento de métricas, vendas, conversas um a um ou para demonstrar o atingimento de um resultado/meta. As agendas das reuniões costumam ser pré-definidas, assim como critérios claros de sucesso e saídas esperadas.",
+					"Além de usar as reuniões para para planejamento, acompanhamento de resultados e brainstorming, os times costumam tomar decisões em consenso durante os encontros. Um facilitador faz uso de dinâmicas para incentivar a participação de todos.",
+					"Como as pessoas tem liberdade para tomar decisões sozinhas e consultando quem elas acharem necessário, as reuniões são menos frequentes e usadas apenas quando necessário.",
+				]
+			},
+			"decisao": {
+				"name": "12 - Tomada de Decisão",
+				"options": [
+					"Todas as decisões com alguma possível consequência são tomadas pelo líder. Os empregados devem buscar a sua aprovação, ou podem ser severamente punidos.",
+					"Processos rígidos e a posição na hierarquia definem claramente quem decide o que. Inovação não é uma prioridade.",
+					"A alta gestão determina a direção da organização, que é quebrada em objetivos e resultados esperados. Os times constroem planos do como chegar lá, que guiam a tomada de decisão no dia a dia. ",
+					"As pessoas \"na linha de frente\" são encorajadas a tomar decisões sem aprovação. Normalmente essas decisões são tomada em grupo, na forma de consenso.",
+					"Mecanismos de tomada de decisão tornam o processo distribuído. Normalmente quando alguém precisa tomar uma decisão, essa pessoa consulta todos os envolvidos e os \"experts\", chegando a uma conclusão sobre o que deve ser feito."
+				]
+			}
+		};
+	    $scope.radioData = radioData;
+	    $scope.progressData = progressData;
+	});
+</script>
