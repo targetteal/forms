@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	function getUrlVars() {
+		var vars = {};
+  		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+  			vars[key] = value;
+  		});
+  		return vars;
+  	}
+  	var email = getUrlVars()['email'];
+  	if (email) {
+	  	document.getElementById('mautic-email').value = email;
+	  	document.getElementById('mautic-submit').click();
+  	}
+</script>
