@@ -8,7 +8,9 @@
   	}
   	var email = getUrlVars()['email'];
   	if (email) {
-	  	document.getElementById('mautic-email').value = email;
+	  	document.getElementById('newsletter-form').style = 'display: none';
+	  	document.getElementById('newsletter-message').style = 'display: inline';
+	  	document.getElementById('mautic-email').value = decodeURIComponent(email);
 	  	document.getElementById('mautic-submit').click();
   	}
 </script>
