@@ -17,9 +17,24 @@
             <input id="mautic-email" type="email" name="mauticform[email]" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false">
         </span>
     </p>
+        
+    <!-- HoneyPot AntiSpam -->
+    <input id="newsletter-form-company" style="display: none" name="company" >
+    
     <p>
         <input type="submit" name="mauticform[submit]" id="mautic-submit" value="Subscribe" class="wpcf7-form-control wpcf7-submit">
     </p>
     <input type="hidden" name="mauticform[formId]" value="13">
     <input type="hidden" name="mauticform[formName]" value="newsletterformeng">
 </form>
+
+<script type="text/javascript">
+    document.getElementById('newsletter-form').onsubmit = function () {
+        var filled = document.getElementById('newsletter-form-company').value;
+        if (filled) {
+            alert('You are a bot!');
+            return false;
+        }
+        return true;
+    };
+</script>
