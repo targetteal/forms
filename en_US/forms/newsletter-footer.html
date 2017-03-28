@@ -1,8 +1,21 @@
-<form method="post" action="http://mautic.targetteal.com/form/submit?formId=13">
-    <input style="height: 55px; width: 200px" required="required" placeholder="First Name" name="mauticform[first_name]" type="text" />
-    <input style="height: 55px; width: 200px" required="required" placeholder="Last Name" name="mauticform[last_name]" type="text" />
-    <input style="height: 55px; width: 200px" required="required" placeholder="Email" name="mauticform[email]" type="email" />
-    <input type="submit" name="mauticform[submit]" class="fusion-button button-flat button-square button-xlarge button-default button-2" value="Subscribe"/>
+<form id="newsletter-form-footer" method="post" action="http://mautic.targetteal.com/form/submit?formId=13">
+    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="First Name" name="mauticform[first_name]" type="text" />
+    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Last Name" name="mauticform[last_name]" type="text" />
+    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Email" name="mauticform[email]" type="email" />
+    <!-- HoneyPot AntiSpam -->
+    <input id="newsletter-form-company" type="text" name="company" style="display: none" />
+    
+    <input style="margin: 5px;" type="submit" name="mauticform[submit]" class="fusion-button button-flat button-square button-xlarge button-default" value="Subscribe"/>
     <input type="hidden" name="mauticform[formId]" value="13" />
     <input type="hidden" name="mauticform[formName]" value="newsletterformeng" />
 </form>
+<script type="text/javascript">
+    document.getElementById('newsletter-form-footer').onsubmit = function () {
+        var filled = document.getElementById('newsletter-form-company').value;
+        if (filled) {
+            alert('You are a bot!');
+            return false;
+        }
+        return true;
+    };
+</script>
