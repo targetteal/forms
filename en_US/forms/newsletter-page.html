@@ -20,6 +20,8 @@
         
     <!-- HoneyPot AntiSpam -->
     <input id="newsletter-form-company" style="display: none" name="company" >
+    <!-- Captcha AntiSpam -->
+    <input id="newsletter-form-captcha" style="display: none" name="mauticform[captcha]" >
     
     <p>
         <input type="submit" name="mauticform[submit]" id="mautic-submit" value="Subscribe" class="wpcf7-form-control wpcf7-submit">
@@ -34,6 +36,8 @@
         if (filled) {
             alert('You are a bot!');
             return false;
+        } else {
+            document.getElementById('newsletter-form-captcha').value = 'teal';        
         }
         return true;
     };
