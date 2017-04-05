@@ -1,4 +1,4 @@
-<form action="http://mautic.targetteal.com/form/submit?formId=2" method="post" class="wpcf7-form">
+<form id="unsubscribe-form" action="http://mautic.targetteal.com/form/submit?formId=2" method="post" class="wpcf7-form">
     <input type="hidden" name="mauticform[formId]" value="2" />
     <input type="hidden" name="mauticform[formName]"value="unsubscribe" />
     <p>
@@ -13,7 +13,26 @@
             <input type="text" name="mauticform[por_que_why]" class="wpcf7-form-control wpcf7-text" aria-invalid="false"/>
         </span>
     </p>
+
+     <!-- HoneyPot AntiSpam -->
+    <input id="unsubscribe-form-company" style="display: none" name="company" >
+    <!-- Captcha AntiSpam -->
+    <input id="unsubscribe-form-captcha" style="display: none" name="mauticform[captcha]" >
+
     <p>
         <input type="submit" name="mauticform[submit]" value="Enviar" class="wpcf7-form-control wpcf7-submit">
     </p>
 </form>
+
+<script type="text/javascript">
+    document.getElementById('unsubscribe-form').onsubmit = function () {
+        var filled = document.getElementById('unsubscribe-form-company').value;
+        if (filled) {
+            alert('You are a bot!');
+            return false;
+        } else {
+            document.getElementById('unsubscribe-form-captcha').value = 'teal';
+        }
+        return true;
+    };
+</script>
