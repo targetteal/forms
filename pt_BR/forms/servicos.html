@@ -1,5 +1,5 @@
 
-<form action="http://mautic.targetteal.com/form/submit?formId=7" method="post" class="wpcf7-form">
+<form id="services-form" action="http://mautic.targetteal.com/form/submit?formId=7" method="post" class="wpcf7-form">
     <input type="hidden" name="mauticform[formId]" value="7"/>
     <input type="hidden" name="mauticform[formName]" value="formservicos"/>
     <p>
@@ -62,7 +62,24 @@
             <textarea name="mauticform[de_que_maneira_a_target_t1]" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea">&nbsp;</textarea>
         </span>
     </p>
+
+    <!-- HoneyPot AntiSpam -->
+    <input id="services-form-company" type="text" name="company" style="display: none" />
+    <!-- Captcha AntiSpam -->
+    <input id="services-form-captcha" type="text" name="mauticform[captcha]" style="display: none" />
     <p>
         <input type="submit" name="mauticform[submit]" value="Enviar" class="wpcf7-form-control wpcf7-submit"/>
     </p>
 </form>
+<script type="text/javascript">
+    document.getElementById('form-services').onsubmit = function () {
+        var filled = document.getElementById('services-form-company').value;
+        if (filled) {
+            alert('You are a bot!');
+            return false;
+        } else {
+            document.getElementById('services-form-captcha').value = 'teal';
+        }
+        return true;
+    };
+</script>
