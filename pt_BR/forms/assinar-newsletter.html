@@ -31,7 +31,7 @@
     <input type="hidden" name="mauticform[formName]" value="newsletterform">
 </form>
 <script type="text/javascript">
-    document.getElementById('newsletter-form-footer').onsubmit = function () {
+    document.getElementById('newsletter-form').onsubmit = function () {
         var filled = document.getElementById('newsletter-form-company').value;
         if (filled) {
             alert('You are a bot!');
