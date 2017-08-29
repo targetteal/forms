@@ -1,0 +1,53 @@
+<form action="https://mautic.targetteal.com/form/submit?formId=20" method="post" class="wpcf7-form">
+    <input type="hidden" name="mauticform[formId]" value="20"/>
+    <input type="hidden" name="mauticform[formName]" value="interesseo2"/>
+    <p>
+        Nome (*)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <input type="text" name="mauticform[nome]" required value="" size="40" class="wpcf7-form-control wpcf7-text"/>
+        </span>
+    </p>
+    <p>
+        Sobrenome (*)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <input type="text" name="mauticform[sobrenome]" required value="" size="80" class="wpcf7-form-control wpcf7-text"/>
+        </span>
+    </p>
+    <p>
+        E-mail (*)
+        <span class="wpcf7-form-control-wrap">
+            <input type="email" name="mauticform[email]" required value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"/>
+        </span>
+    </p>
+    <p>
+        Tenho interesse no curso... 
+        <br><br>
+        <span class="wpcf7-form-control-wrap">
+            <input id="mauticform-fundamentos" name="mauticform[tenho_interesse_no][]" type="checkbox" value="Fundamentos" />
+            <label for="mauticform-fundamentos"> Fundamentos em Auto-organização</label><br>
+            <input id="mauticform-taster" name="mauticform[tenho_interesse_no][]" type="checkbox" value="Taster" />
+            <label for="mauticform-taster"> Taster de O2</label><br>
+            <input id="mauticform-intensivo" name="mauticform[tenho_interesse_no][]" type="checkbox" value="Intensivo" />
+            <label for="mauticform-intensivo"> Workshop Intensivo de O2</label><br>
+            <input id="mauticform-rdp" name="mauticform[tenho_interesse_no][]" type="checkbox" value="RDP" />
+            <label for="mauticform-rdp"> Rogue Development Program</label><br>
+        </span>
+    </p>
+    <p>
+        Comentários
+        <span class="wpcf7-form-control-wrap">
+            <textarea rows="2" name="mauticform[comentario]" class="wpcf7-form-control wpcf7-text"></textarea>
+        </span>
+    </p>
+    <p>
+        <span class="wpcf7-form-control-wrap">
+            <input checked="checked" name="mauticform[quer_receber_novidades_e]" type="checkbox" value="Sim" />
+            Quer receber novidades sobre o futuro do trabalho e das organizações?
+        </span>                
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" value="Registrar Interesse" class="wpcf7-form-control wpcf7-submit"/>
+    </p>
+</form>
