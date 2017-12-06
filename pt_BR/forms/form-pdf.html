@@ -1,0 +1,58 @@
+<form action="https://mautic.targetteal.com/form/submit?formId=23" method="post" class="wpcf7-form">
+    <input type="hidden" name="mauticform[formId]" value="23"/>
+    <input type="hidden" name="mauticform[formName]" value="formpdf"/>
+    <p>
+        Nome (*)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <input type="text" name="mauticform[nome]" required value="" size="40" class="wpcf7-form-control wpcf7-text"/>
+        </span>
+    </p>
+    <p>
+        Sobrenome (*)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <input type="text" name="mauticform[sobrenome]" required value="" size="80" class="wpcf7-form-control wpcf7-text"/>
+        </span>
+    </p>
+    <p>
+        E-mail (*)
+        <span class="wpcf7-form-control-wrap">
+            <input type="email" name="mauticform[email]" required value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"/>
+        </span>
+    </p>
+    <p>
+        Celular (com DDD)
+        <span class="wpcf7-form-control-wrap">
+            <input type="text" name="mauticform[celular_com_ddd]" required value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-text"/>
+        </span>
+    </p>
+    <p>
+        Descreva em poucas palavras seu conhecimento em autogestão e tecnologias sociais para autogestão (Sociocracia, Holacracia ou O2)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <textarea name="mauticform[descreva_em_poucas_palavr]" required value="" size="80" class="wpcf7-form-control wpcf7-text"></textarea>
+        </span>
+    </p>
+    <p>
+        Escolha o perfil que melhor descreve você (*)
+        <br>
+        <span class="wpcf7-form-control-wrap">
+            <select name="mauticform[escolha_o_que_melhor_desc]" class="wpcf7-form-control wpcf7-text">
+                <option value="Sócio ou Proprietário">Sócio ou Proprietário</option>
+                <option value="Gestor">Gestor</option>
+                <option value="Recursos Humanos">Recursos Humanos</option>
+                <option value="Consultor / Agente de Mudança">Consultor / Agente de Mudança</option>
+            </select>
+        </span>
+    </p>
+    <p>
+        <span class="wpcf7-form-control-wrap">
+            <input checked="checked" name="mauticform[quero_receber_novidades_e1][]" type="checkbox" value="Sim" />
+            Quer receber novidades sobre o futuro do trabalho e das organizações?
+        </span>                
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" value="Confirmar Inscrição" class="wpcf7-form-control wpcf7-submit"/>
+    </p>
+</form>
