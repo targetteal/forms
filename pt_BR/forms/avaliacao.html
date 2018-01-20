@@ -1,16 +1,14 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
 <div ng-app="myApp" ng-controller="assessmentController">
-    <p>Seja bem-vindo à Avaliação de Desenvolvimento Organizacional! </p>
     <p>Essa é uma avaliação para determinar o <a href="https://targetteal.com/pt/blog/5-estagios-desenvolvimento-organizacional/">estágio de desenvolvimento da sua organização</a>, de acordo com o modelo proposto por Frederic Laloux.</p>
-    <p>Escolha a alternativa que mais se aplica a sua organização, de acordo com cada critério sendo avaliado.</p>
     <div class="radio-row" ng-repeat="(name, obj) in radioData">
         <h3>{{obj.name}}</h3>
         <div ng-repeat="(index, option) in obj.options">
             <label><input name="{{name}}" ng-model="options[name]" type="radio" value="{{index + 1}}">&nbsp; {{option}}</label>
         </div>
+        <br/>
     </div>
-    <br/>
     <br/>
     <button class="fusion-button button-flat button-square button-xlarge button-default button-1" target="_self" ng-click="done()"><span class="fusion-button-text">Já terminou? Confira os resultados</span></button>
 </div>
