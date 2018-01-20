@@ -1,17 +1,13 @@
-<form id="unsubscribe-form" action="https://mautic.targetteal.com/form/submit?formId=2" method="post" class="wpcf7-form">
+<form id="unsubscribe-form" action="https://mautic.targetteal.com/form/submit?formId=2" method="post">
     <input type="hidden" name="mauticform[formId]" value="2" />
     <input type="hidden" name="mauticform[formName]"value="unsubscribe" />
     <p>
-        E-mail (obrigatório)
-        <span class="wpcf7-form-control-wrap your-email">
-            <input type="email" name="mauticform[email]" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false">
-        </span>
+        E-mail (*)
+        <input type="email" name="mauticform[email]" required="required" size="40" />
     </p>
     <p>
         Por quê? Why? :(
-        <span class="wpcf7-form-control-wrap your-message">
-            <input type="text" name="mauticform[por_que_why]" class="wpcf7-form-control wpcf7-text" aria-invalid="false"/>
-        </span>
+        <input type="text" name="mauticform[por_que_why]"/>
     </p>
 
      <!-- HoneyPot AntiSpam -->
@@ -20,19 +16,6 @@
     <input id="unsubscribe-form-captcha" style="display: none" name="mauticform[captcha]" >
 
     <p>
-        <input type="submit" name="mauticform[submit]" value="Enviar" class="wpcf7-form-control wpcf7-submit">
+        <input type="submit" name="mauticform[submit]" value="Enviar" class="fusion-button button-flat fusion-button-square button-xlarge button-default">
     </p>
 </form>
-
-<script type="text/javascript">
-    document.getElementById('unsubscribe-form').onsubmit = function () {
-        var filled = document.getElementById('unsubscribe-form-company').value;
-        if (filled) {
-            alert('You are a bot!');
-            return false;
-        } else {
-            document.getElementById('unsubscribe-form-captcha').value = 'teal';
-        }
-        return true;
-    };
-</script>
