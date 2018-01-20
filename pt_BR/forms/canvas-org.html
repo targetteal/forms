@@ -1,0 +1,38 @@
+<form action="https://mautic.targetteal.com/form/submit?formId=10" method="post">
+    <input type="hidden" name="mauticform[formId]" value="10" />
+    <input type="hidden" name="mauticform[formName]" value="formlpcanvas" />
+    <p>
+        Nome (*)<br>
+        <input type="text" name="mauticform[nome]" required="required" size="40" aria-required="true" aria-invalid="false"/>
+    </p>
+    <p>
+        Sobrenome<br>
+        <input type="text" name="mauticform[sobrenome]" size="80" aria-invalid="false"/>
+    </p>
+    <p>
+        E-mail (*)<br/>
+        <input type="email" name="mauticform[email]" required="required" size="40" aria-required="true" aria-invalid="false"/>
+    </p>
+    <p>
+        Nome da sua organização<br>
+        <input type="text" name="mauticform[nome_de_sua_organizacao]" required="required" size="40" aria-invalid="false"/>
+    </p>
+    <p>
+        Escolha o que melhor descreve seu papel<br>
+        <select name="mauticform[escolha_o_que_melhor_desc]">
+            <option value="Sócio ou Proprietário">Sócio ou Proprietário</option>
+            <option value="Gestor">Gestor</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Consultor / Agente de Mudança">Consultor / Agente de Mudança</option>
+        </select>
+    </p>
+    <p>
+        <label for="receber-novidades">
+            <input checked="checked" id="receber-novidades" name="mauticform[quero_receber_novidades_e1][]" type="checkbox" value="Sim" />
+            Quer receber novidades sobre o futuro do trabalho e das organizações?                
+        </label>
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" class="fusion-button button-flat fusion-button-square button-xlarge red-bg white-font" style="width: 100%" value="Baixar o Guia do Canvas Organizacional" />
+    </p>
+</form>
