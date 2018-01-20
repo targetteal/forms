@@ -1,33 +1,25 @@
-<form id="newsletter-form" method="post" action="https://mautic.targetteal.com/form/submit?formId=5" class="wpcf7-form">
-    <p>Assine a nossa newsletter e receba as novidades sobre o futuro do trabalho ;)</p>
+<form id="newsletter-form" method="post" action="https://mautic.targetteal.com/form/submit?formId=5">
     <p>
-        Nome
-        <span class="wpcf7-form-control-wrap your-name">
-            <input type="text" name="mauticform[nome]" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span>
+        Nome (*)<br>
+        <input type="text" required name="mauticform[nome]" size="40">
     </p>
     <p>
-        Sobrenome
-        <span class="wpcf7-form-control-wrap your-name">
-            <input type="text" name="mauticform[sobrenome]" value="" size="80" class="wpcf7-form-control wpcf7-text" aria-invalid="false">
-        </span>
+        Sobrenome<br>
+        <input type="text" name="mauticform[sobrenome]" size="80">
+        
     </p>
     <p>
-        E-mail
-        <span class="wpcf7-form-control-wrap your-email">
-            <input id="mautic-email" type="email" name="mauticform[email]" required="required" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false">
-        </span>
+        E-mail<br>
+        <input id="mautic-email" type="email" name="mauticform[email]" required size="40">
     </p>
-    
     <!-- HoneyPot AntiSpam -->
     <input id="newsletter-form-company" style="display: none" name="company" >
     <!-- Captcha AntiSpam -->
     <input id="newsletter-form-captcha" style="display: none" name="mauticform[captcha]" >
-
     <p>
-        <input type="submit" name="mauticform[submit]" id="mautic-submit" value="Assinar" class="wpcf7-form-control wpcf7-submit">
+        <input type="submit" name="mauticform[submit]" id="mautic-submit" value="Assinar" class="fusion-button button-flat fusion-button-square button-xlarge button-default">
     </p>
-
-   <input type="hidden" name="mauticform[formId]" value="5">
+    <input type="hidden" name="mauticform[formId]" value="5">
     <input type="hidden" name="mauticform[formName]" value="newsletterform">
 </form>
 <script type="text/javascript">
@@ -42,4 +34,3 @@
         return true;
     };
 </script>
-
