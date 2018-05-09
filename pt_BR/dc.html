@@ -1,21 +1,25 @@
-<form action="https://mautic.targetteal.com/form/submit?formId=15" method="post">
+<form action="https://scripts.targetteal.com/honey-filter.php" method="post">
     <input type="hidden" name="mauticform[formId]" value="15" />
     <input type="hidden" name="mauticform[formName]" value="formlpguiadc" />
     <p>
         Nome (*)<br>
-        <input type="text" name="mauticform[nome]" required="required" value="" size="40" aria-required="true" aria-invalid="false">
+        <input type="text" name="mauticform[nome]" required="required" value="" size="40">
     </p>
     <p>
         Sobrenome<br>
-        <input type="text" name="mauticform[sobrenome]" value="" size="80" aria-invalid="false">
+        <input type="text" name="mauticform[sobrenome]" value="" size="80">
     </p>
     <p>
         E-mail (*)<br/>
-        <input type="email" name="mauticform[email]" required="required" value="" size="40" aria-required="true" aria-invalid="false">
+        <input type="email" name="mauticform[email]" id="email">
+        <script type="text/javascript">
+            document.getElementById('email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
     </p>
     <p>
         Nome da sua organização<br/>
-        <input type="text" name="mauticform[nome_de_sua_organizacao]" required="required" value="" size="40" aria-invalid="false">
+        <input type="text" name="mauticform[nome_de_sua_organizacao]" required="required" value="" size="40">
     </p>
     <p>
         Escolha o que melhor descreve seu papel<br/>

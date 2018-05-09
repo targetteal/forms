@@ -1,0 +1,24 @@
+<form method="post" action="https://scripts.targetteal.com/honey-filter.php">
+    <p>
+        Fist Name<br>
+        <input type="text" required name="mauticform[nome]" size="40">
+    </p>
+    <p>
+        Last Name<br>
+        <input type="text" name="mauticform[sobrenome]" size="80">
+
+    </p>
+    <p>
+        Email<br>
+        <input type="email" name="mauticform[email]" id="email">
+        <script type="text/javascript">
+            document.getElementById('email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" id="mautic-submit" value="Send" class="fusion-button button-flat fusion-button-square button-xlarge button-default">
+    </p>
+    <input type="hidden" name="mauticform[formId]" value="13">
+    <input type="hidden" name="mauticform[formName]" value="newsletterformeng">
+</form>

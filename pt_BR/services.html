@@ -1,4 +1,4 @@
-<form id="services-form" action="https://mautic.targetteal.com/form/submit?formId=7" method="post">
+<form action="https://scripts.targetteal.com/honey-filter.php" method="post">
     <input type="hidden" name="mauticform[formId]" value="7"/>
     <input type="hidden" name="mauticform[formName]" value="formservicos"/>
     <p>
@@ -11,7 +11,11 @@
     </p>
     <p>
         E-mail (*)<br/>
-        <input type="email" name="mauticform[email]" required size="40"/>
+        <input type="email" name="mauticform[email]" id="email">
+        <script type="text/javascript">
+            document.getElementById('email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
     </p>
     <p>
         Telefone<br/>
@@ -38,25 +42,7 @@
         Como a Target Teal pode te ajudar?<br>
         <textarea name="mauticform[de_que_maneira_a_target_t1]" cols="40" rows="10">&nbsp;</textarea>
     </p>
-
-    <!-- HoneyPot AntiSpam -->
-    <input id="services-form-company" type="text" name="company" style="display: none" />
-    <!-- Captcha AntiSpam -->
-    <input id="services-form-captcha" type="text" name="mauticform[captcha]" style="display: none" />
-
     <p>
         <input type="submit" name="mauticform[submit]" value="Enviar Mensagem" class="fusion-button button-flat fusion-button-square button-xlarge button-default"/>
     </p>
 </form>
-<script type="text/javascript">
-    document.getElementById('services-form').onsubmit = function () {
-        var filled = document.getElementById('services-form-company').value;
-        if (filled) {
-            alert('You are a bot!');
-            return false;
-        } else {
-            document.getElementById('services-form-captcha').value = 'teal';
-        }
-        return true;
-    };
-</script>

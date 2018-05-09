@@ -1,4 +1,4 @@
-<form action="https://mautic.targetteal.com/form/submit?formId=21" method="post">
+<form action="https://scripts.targetteal.com/honey-filter.php" method="post">
     <input type="hidden" name="mauticform[formId]" value="21"/>
     <input type="hidden" name="mauticform[formName]" value="formfundamentos"/>
     <p>
@@ -11,7 +11,11 @@
     </p>
     <p>
         E-mail (*)
-        <input type="email" name="mauticform[email]" required size="40"/>
+        <input type="email" name="mauticform[email]" id="email">
+        <script type="text/javascript">
+            document.getElementById('email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
     </p>
     <p>
         Nome da sua organização (*)<br>
@@ -29,7 +33,7 @@
     <p>
         <label for="receber-novidades">
             <input id="receber-novidades" checked="checked" name="mauticform[quero_receber_novidades_e1][]" type="checkbox" value="Sim" />
-            Quer receber novidades sobre o futuro do trabalho e das organizações?                
+            Quer receber novidades sobre o futuro do trabalho e das organizações?
         </label>
     </p>
     <p>

@@ -1,0 +1,42 @@
+<form action="https://scripts.targetteal.com/honey-filter.php" method="post" id="mautic-form-interesse-o2">
+    <input type="hidden" name="mauticform[formId]" value="20"/>
+    <input type="hidden" name="mauticform[formName]" value="interesseo2"/>
+    <p>
+        Nome (*)<br>
+        <input type="text" name="mauticform[nome]" required size="40"/>
+    </p>
+    <p>
+        Sobrenome (*)<br>
+        <input type="text" name="mauticform[sobrenome]" required size="80"/>
+    </p>
+    <p>
+        E-mail (*)<br>
+        <input type="email" name="mauticform[email]" id="email">
+        <script type="text/javascript">
+            document.getElementById('email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
+    </p>
+    <p>
+        Comentários<br/>
+        <textarea id="mautic-comentario" rows="4" name="mauticform[comentario]" placeholder="Para você colocar suas preferências de local, data ou outras sugestões."></textarea>
+    </p>
+    <p>
+        <label for="receber-novidades">
+            <input id="receber-novidades" checked="checked" name="mauticform[quer_receber_novidades_e]" type="checkbox" value="Sim" />
+            Quer receber novidades sobre o futuro do trabalho e das organizações?
+        </label>
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" value="Registrar Interesse" class="fusion-button button-flat fusion-button-square button-xlarge button-default"/>
+    </p>
+</form>
+<script type="text/javascript">
+    // Hack para validar no mautic se o comentário está vazio
+    jQuery('#mautic-form-interesse-o2').submit(function(){
+        var comentario = jQuery('#mautic-comentario').val();
+        if (comentario == '') {
+            jQuery('#mautic-comentario').val('$#&');
+        }
+    });
+</script>
