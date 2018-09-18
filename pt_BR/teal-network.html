@@ -4,26 +4,26 @@
     </p>
     <input type="hidden" name="mauticform[formId]" value="43"/>
     <input type="hidden" name="mauticform[formName]" value="tealnetworkinscricao"/>
-    <p>
-        Nome (*)<br/>
-        <input type="text" name="mauticform[nome]" required />
-    </p>
-    <p>
-        Sobrenome (*)<br/>
-        <input type="text" name="mauticform[sobrenome]" requied />
-    </p>
-    <p>
-        E-mail (*)<br/>
-        <input type="email" name="mauticform[email]" id="email">
-        <script type="text/javascript">
-            document.getElementById('email').style.display = 'none';
-        </script>
-        <input type="email" name="mauticform[amail]" required />
-    </p>
-    <p>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+      Nome (*)<br/>
+      <input type="text" name="mauticform[nome]" required />
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+      Sobrenome (*)<br/>
+      <input type="text" name="mauticform[sobrenome]" requied />
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+      E-mail (*)<br/>
+      <input type="email" name="mauticform[email]" id="email">
+      <script type="text/javascript">
+          document.getElementById('email').style.display = 'none';
+      </script>
+      <input type="email" name="mauticform[amail]" required />
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         Telefone (whatsapp)<br/>
         <input type="text" name="mauticform[telefone_whatsapp]"/>
-    </p>
+    </div>
     <p>
         Linkedin<br/>
         <input type="text" name="mauticform[linkedin]"/>
@@ -43,6 +43,6 @@
         </label>
     </p>
     <p>
-        <input type="submit" name="mauticform[submit]" value="Realizar Inscrição" class="fusion-button button-flat fusion-button-square button-xlarge button-default"/>
+      <input type="submit" name="mauticform[submit]" value="Realizar Inscrição" class="fusion-button button-flat fusion-button-square button-xlarge button-default"/>
     </p>
 </form>
