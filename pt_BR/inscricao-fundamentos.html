@@ -1,27 +1,31 @@
 <form action="https://scripts.targetteal.com/honey-filter.php" method="post">
     <input type="hidden" name="mauticform[formId]" value="21"/>
     <input type="hidden" name="mauticform[formName]" value="formfundamentos"/>
-    <p>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
         Nome (*)<br>
         <input type="text" name="mauticform[nome]" required size="40"/>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         Sobrenome (*)<br>
         <input type="text" name="mauticform[sobrenome]" required size="80"/>
-    </p>
-    <p>
-        E-mail (*)
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        E-mail (*)<br>
         <input type="email" name="mauticform[email]" id="email">
         <script type="text/javascript">
             document.getElementById('email').style.display = 'none';
         </script>
         <input type="email" name="mauticform[amail]" required size="40">
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        Celular (*) <br>
+        <input type="text" name="mauticform[telefone]" required size="20"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
         Nome da sua organização (*)<br>
         <input type="text" name="mauticform[nome_de_sua_organizacao]" required size="80"/>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         Escolha o perfil que melhor descreve você (*)<br>
         <select name="mauticform[escolha_o_que_melhor_desc]">
             <option value="Sócio ou Proprietário">Sócio ou Proprietário</option>
@@ -29,7 +33,7 @@
             <option value="Recursos Humanos">Recursos Humanos</option>
             <option value="Consultor / Agente de Mudança">Consultor / Agente de Mudança</option>
         </select>
-    </p>
+    </div>
     <p>
         <label for="receber-novidades">
             <input id="receber-novidades" checked="checked" name="mauticform[quero_receber_novidades_e1]" type="checkbox" value="Sim" />
