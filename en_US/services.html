@@ -1,48 +1,49 @@
 <form action="https://scripts.targetteal.com/honey-filter.php" method="post">
     <input type="hidden" name="mauticform[formId]" value="12"/>
     <input type="hidden" name="mauticform[formName]" value="formservices"/>
-    <p>
-        Fist Name (*) <br>
-        <input type="text" name="mauticform[first_name]" required value="" size="40">
-    </p>
-    <p>
-        Last Name <br>
-        <input type="text" name="mauticform[last_name]" value="" size="80">
-    </p>
-    <p>
-        E-mail (*) <br>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        First Name (*): <br/>
+        <input type="text" name="mauticform[first_name]" required size="40" />
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        Last Name: <br/>
+        <input type="text" name="mauticform[last_name]" size="80" />
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        E-mail (*):<br/>
         <input type="email" name="mauticform[email]" id="email">
         <script type="text/javascript">
             document.getElementById('email').style.display = 'none';
         </script>
         <input type="email" name="mauticform[amail]" required size="40">
-    </p>
-    <p>
-        Phone <br>
-        <input type="text" name="mauticform[phone]" value="" size="30">
-    </p>
-    <p>
-        Name of your organization <br>
-        <input type="text" name="mauticform[organization]" value="" size="80">
-    </p>
-    <p>
-        Website <br>
-        <input type="text" name="mauticform[website]" value="" size="80">
-    </p>
-    <p>
-        Choose what better decribes your role <br>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        Phone:<br/>
+        <input type="text" name="mauticform[phone]" size="30"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        Organization:<br>
+        <input type="text" name="mauticform[organization]" size="80"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        Website:<br>
+        <input type="text" name="mauticform[website]" size="80" />
+    </div>
+    <div>
+        Choose what better decribes your role: <br>
         <select name="mauticform[choose_what_better_decrib]" class="wpcf7-form-control wpcf7-text">
             <option value="Owner">Owner</option>
             <option value="Manager">Manager</option>
             <option value="Human Resources">Human Resources</option>
             <option value="Change Agent">Change Agent</option>
         </select>
-    </p>
+    </div>
+    <br/>
     <p>
-        How can Target Teal help you? <br>
+        How can we help you?<br>
         <textarea name="mauticform[how_can_target_teal_help]" cols="40" rows="10">&nbsp;</textarea>
     </p>
     <p>
-        <input type="submit" name="mauticform[submit]" value="Send" class="fusion-button button-flat fusion-button-square button-xlarge button-default"/>
+        <input type="submit" name="mauticform[submit]" value="Send" class="fusion-button button-3d fusion-button-square button-xlarge button-default"/>
     </p>
 </form>
