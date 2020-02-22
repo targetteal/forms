@@ -1,0 +1,42 @@
+<form action="https://scripts.targetteal.com/honey-filter.php" method="post" id="mautic-form-videoaulas-o2">
+    <input type="hidden" name="mauticform[formId]" value="49"/>
+    <input type="hidden" name="mauticform[formName]" value="interesseonlineo2"/>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        Nome (*)<br>
+        <input type="text" name="mauticform[nome]" required size="40"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        Sobrenome (*)<br>
+        <input type="text" name="mauticform[sobrenome]" required size="80"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+        Telefone <br>
+        <input type="text" name="mauticform[telefone]" required size="80"/>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
+        E-mail (*)<br>
+        <input type="email" name="mauticform[email]" id="o2-email">
+        <script type="text/javascript">
+            document.getElementById('o2-email').style.display = 'none';
+        </script>
+        <input type="email" name="mauticform[amail]" required size="40">
+    </div>
+    <p>
+        <label for="receber-novidades">
+            <input id="receber-novidades" checked="checked" name="mauticform[quer_receber_novidades_e]" type="checkbox" value="Sim" />
+            Quer receber novidades sobre o futuro do trabalho e das organizações?
+        </label>
+    </p>
+    <p>
+        <input type="submit" name="mauticform[submit]" value="Acessar Videoaulas" class="fusion-button button-3d fusion-button-square button-xlarge button-default"/>
+    </p>
+</form>
+<script type="text/javascript">
+    // Hack para validar no mautic se o comentário está vazio
+    jQuery('#mautic-form-videoaulas-o2').submit(function(){
+        var comentario = jQuery('#mautic-comentario').val();
+        if (comentario == '') {
+            jQuery('#mautic-comentario').val('$#&');
+        }
+    });
+</script>
