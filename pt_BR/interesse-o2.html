@@ -1,30 +1,30 @@
 <form action="https://scripts.targetteal.com/honey-filter.php" method="post" id="mautic-form-interesse-o2">
     <input type="hidden" name="mauticform[formId]" value="20"/>
     <input type="hidden" name="mauticform[formName]" value="interesseo2"/>
-    <p>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
         Nome (*)<br>
         <input type="text" name="mauticform[nome]" required size="40"/>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         Sobrenome (*)<br>
         <input type="text" name="mauticform[sobrenome]" required size="80"/>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
         Telefone <br>
         <input type="text" name="mauticform[telefone]" required size="80"/>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         E-mail (*)<br>
         <input type="email" name="mauticform[email]" id="o2-email">
         <script type="text/javascript">
             document.getElementById('o2-email').style.display = 'none';
         </script>
         <input type="email" name="mauticform[amail]" required size="40">
-    </p>
-    <p>
-      Estado de preferência para realização do curso
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes">
+      Estado de preferência
       <select name="mauticform[estado_de_preferencia]" value="-">
-          <option value="-">-</option>
+          <option value="Online">-</option>
           <option value="AC">AC</option>
           <option value="AL">AL</option>
           <option value="AP">AP</option>
@@ -53,11 +53,11 @@
           <option value="SE">SE</option>
           <option value="TO">TO</option>
       </select>
-    </p>
-    <p>
+    </div>
+    <div class="fusion-one-half one_half fusion-layout-column fusion-spacing-yes fusion-column-last">
         Comentários<br/>
         <textarea id="mautic-comentario" rows="4" name="mauticform[comentario]" placeholder="Para você colocar suas preferências de local, data ou outras sugestões."></textarea>
-    </p>
+    </div>
     <p>
         <label for="receber-novidades">
             <input id="receber-novidades" checked="checked" name="mauticform[quer_receber_novidades_e]" type="checkbox" value="Sim" />
