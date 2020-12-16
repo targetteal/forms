@@ -1,14 +1,23 @@
-<form id="newsletter-form-footer" method="post" action="https://scripts.targetteal.com/honey-filter.php">
-    <!-- Begin Honeypot -->
-    <input type="email" name="mauticform[email]" id="news-footer-email">
-    <script type="text/javascript">
-        document.getElementById('news-footer-email').style.display = 'none';
-    </script>
-    <!-- End Honeypot -->
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="First Name" name="mauticform[first_name]" type="text" />
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Last Name" name="mauticform[last_name]" type="text" />
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Email" name="mauticform[amail]" type="email" />
-    <input style="margin: 5px;" type="submit" name="mauticform[submit]" class="fusion-button button-flat button-square button-xlarge button-default" value="Subscribe"/>
-    <input type="hidden" name="mauticform[formId]" value="13" />
-    <input type="hidden" name="mauticform[formName]" value="newsletterformeng" />
+<style>
+  #newsletter-form-footer .newsletter-footer-field {
+    margin: 5px;
+    height: 55px;
+    width: 200px;
+  }
+</style>
+
+<form id="newsletter-form-footer" method="POST" action="https://targetteal76974.activehosted.com/proc.php">
+    <input type="hidden" name="u" value="26" />
+    <input type="hidden" name="f" value="26" />
+    <input type="hidden" name="s" />
+    <input type="hidden" name="c" value="0" />
+    <input type="hidden" name="m" value="0" />
+    <input type="hidden" name="act" value="sub" />
+    <input type="hidden" name="v" value="2" />
+
+    <input class="newsletter-footer-field" type="text" name="firstname" placeholder="First name" required/>
+    <input class="newsletter-footer-field" type="text" name="lastname" placeholder="Last name" required />
+    <input class="newsletter-footer-field" type="email" name="email" placeholder="Email" required/>
+
+    <button class="fusion-button button-3d button-square button-xlarge button-default" type="submit">Signup</button>
 </form>

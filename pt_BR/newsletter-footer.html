@@ -1,14 +1,23 @@
-<form id="newsletter-form-footer" method="post" action="https://scripts.targetteal.com/honey-filter.php">
-    <!-- Begin Honeypot -->
-    <input type="email" name="mauticform[email]" id="news-footer-email">
-    <script type="text/javascript">
-        document.getElementById('news-footer-email').style.display = 'none';
-    </script>
-    <!-- End Honeypot -->
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Nome" name="mauticform[nome]" type="text" />
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="Sobrenome" name="mauticform[sobrenome]" type="text" />
-    <input style="margin: 5px; height: 55px; width: 200px" required="required" placeholder="E-mail" name="mauticform[amail]" type="email" />
-    <input style="margin: 5px;" type="submit" name="mauticform[submit]" class="fusion-button button-3d button-square button-xlarge button-default" value="Assinar"/>
-    <input type="hidden" name="mauticform[formId]" value="42" />
-    <input type="hidden" name="mauticform[formName]" value="newsletterformnovo" />
+<style>
+  #newsletter-form-footer .newsletter-footer-field {
+    margin: 5px;
+    height: 55px;
+    width: 200px;
+  }
+</style>
+
+<form id="newsletter-form-footer" method="POST" action="https://targetteal76974.activehosted.com/proc.php">
+    <input type="hidden" name="u" value="5" />
+    <input type="hidden" name="f" value="5" />
+    <input type="hidden" name="s" />
+    <input type="hidden" name="c" value="0" />
+    <input type="hidden" name="m" value="0" />
+    <input type="hidden" name="act" value="sub" />
+    <input type="hidden" name="v" value="2" />
+
+    <input class="newsletter-footer-field" type="text" name="firstname" placeholder="Nome" required/>
+    <input class="newsletter-footer-field" type="text" name="lastname" placeholder="Sobrenome" required />
+    <input class="newsletter-footer-field" type="email" name="email" placeholder="E-mail" required/>
+
+    <button class="fusion-button button-3d button-square button-xlarge button-default" type="submit">Assinar</button>
 </form>
